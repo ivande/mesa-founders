@@ -128,7 +128,7 @@ export async function submitWorkshop(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Mesa Workshop <onboarding@resend.dev>",
+          from: "Sobremesa Workshop <onboarding@resend.dev>",
           to: notifyEmail,
           subject: `New Workshop Response: ${formData.venueName}`,
           html: `<h2>Workshop Response from ${formData.venueName}</h2><p>${htmlFields}</p>`,

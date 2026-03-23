@@ -49,7 +49,7 @@ export function Gate({ children }: { children: React.ReactNode }) {
         </p>
 
         <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-semibold mb-4">
-          Mesa
+          Sobremesa
         </h1>
 
         <p className="text-text-on-dark/50 text-lg leading-relaxed mb-12">
