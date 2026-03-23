@@ -17,7 +17,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-accent tracking-[0.25em] uppercase text-sm font-medium mb-8"
         >
-          Workshop Draft &middot; February 2026
+          Final Workshop &middot; March 2026
         </motion.p>
 
         <motion.h1

@@ -9,7 +9,7 @@ export default function Error() {
         href="/"
         className="text-accent hover:text-accent-light transition-colors"
       >
-        Back to Mesa
+        Back to Sobremesa
       </a>
     </div>
   );

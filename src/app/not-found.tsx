@@ -9,7 +9,7 @@ export default function NotFound() {
         href="/"
         className="text-accent hover:text-accent-light transition-colors"
       >
-        Back to Mesa
+        Back to Sobremesa
       </Link>
     </div>
   );

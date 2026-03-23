@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "@/styles/globals.css";
+import { Gate } from "@/components/Gate";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -15,11 +16,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Mesa — The Complete Hospitality Guest Management Platform",
+  title: "Sobremesa — The Complete Hospitality Guest Management Platform",
   description:
     "Reservations, Guest Intelligence, Campaigns & Reputation. Powered by WhatsApp & Instagram. Built for premium venues in the Dominican Republic.",
   openGraph: {
-    title: "Mesa — The Complete Hospitality Guest Management Platform",
+    title: "Sobremesa — The Complete Hospitality Guest Management Platform",
     description:
       "Reservations, Guest Intelligence, Campaigns & Reputation. Powered by WhatsApp & Instagram.",
     type: "website",
@@ -33,7 +34,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body>{children}</body>
+      <body>
+          <Gate>{children}</Gate>
+        </body>
     </html>
   );
 }

@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 const phases = [
   {
     phase: "Phase 1",
-    timeline: "Months 1–2",
+    timeline: "Month 1",
     items: [
       "WhatsApp reservation bot (intake, confirmation, reminders)",
       "Basic availability and capacity management",
@@ -17,7 +17,7 @@ const phases = [
   },
   {
     phase: "Phase 2",
-    timeline: "Months 3–4",
+    timeline: "Month 2",
     items: [
       "Guest CRM with auto-generated profiles",
       "Visit history and staff notes",
@@ -28,7 +28,7 @@ const phases = [
   },
   {
     phase: "Phase 3",
-    timeline: "Months 5–6",
+    timeline: "Month 3",
     items: [
       "WhatsApp campaign broadcasts to segments",
       "Automated flows (birthday, win-back, post-first-visit)",
@@ -39,7 +39,7 @@ const phases = [
   },
   {
     phase: "Phase 4",
-    timeline: "Months 7+",
+    timeline: "Month 4+",
     items: [
       "Advanced analytics and reporting",
       "POS integration for spend data",
