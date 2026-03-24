@@ -23,7 +23,7 @@ const STORAGE_KEY = "mesa-workshop-data";
 const STEP_KEY = "mesa-workshop-step";
 const TOTAL_STEPS = 5;
 
-// Fields that belong to each step — used for per-step validation
+// Fields that belong to each step, used for per-step validation
 const STEP_FIELDS: (keyof WorkshopData)[][] = [
   ["venueName", "contactName", "role", "whatsapp"],
   ["reservationFlow", "reservationVolume", "noShowRate", "currentTools", "primaryUser"],

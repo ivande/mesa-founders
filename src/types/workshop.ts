@@ -65,7 +65,7 @@ export const stepTitles = [
 
 export const stepIntros = [
   "Let's start with some basics about you and your venue.",
-  "Walk us through a typical evening — from the first reservation request to closing.",
+  "Walk us through a typical evening, from the first reservation request to closing.",
   "Tell us about the people who make your venue special.",
   "How do you stay connected with guests between visits?",
   "Help us understand what would make this platform indispensable for you.",

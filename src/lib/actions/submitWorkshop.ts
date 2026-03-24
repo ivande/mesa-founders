@@ -30,7 +30,7 @@ export async function submitWorkshop(
         "Submitted At": new Date().toISOString(),
       };
 
-      // Optional fields — only include if non-empty
+      // Optional fields, only include if non-empty
       const optionalFields: [string, string | undefined][] = [
         ["Reservation Flow", formData.reservationFlow],
         ["Reservation Volume", formData.reservationVolume],
@@ -82,7 +82,7 @@ export async function submitWorkshop(
       console.error("Airtable submission failed:", e);
     }
   } else {
-    console.warn("Airtable env vars not configured — skipping Airtable submission");
+    console.warn("Airtable env vars not configured, skipping Airtable submission");
   }
 
   // Email notification via Resend
@@ -145,7 +145,7 @@ export async function submitWorkshop(
       console.error("Email notification failed:", e);
     }
   } else {
-    console.warn("Resend env vars not configured — skipping email notification");
+    console.warn("Resend env vars not configured, skipping email notification");
   }
 
   // Require at least one submission channel to succeed

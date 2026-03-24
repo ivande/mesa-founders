@@ -23,7 +23,7 @@ const phases = [
       "Visit history and staff notes",
       "Guest segmentation (new, returning, regular, VIP, at-risk)",
       "Instagram DM integration",
-      "Host lookup tool — guest history at a glance",
+      "Host lookup tool, guest history at a glance",
     ],
   },
   {

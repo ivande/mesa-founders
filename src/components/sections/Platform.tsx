@@ -17,7 +17,7 @@ const modules = [
   },
   {
     name: "Guest Intelligence",
-    tagline: "Every guest has a story — your team should know it",
+    tagline: "Every guest has a story, your team should know it",
     features: [
       "Auto-generated profiles from WhatsApp",
       "Visit history & staff notes",
@@ -80,7 +80,7 @@ export function Platform() {
           The Platform
         </h2>
         <p className="text-text-secondary text-lg max-w-3xl mb-12">
-          Six integrated modules. Each adds value independently — together they
+          Six integrated modules. Each adds value independently, together they
           create a complete guest management ecosystem.
         </p>
       </FadeIn>

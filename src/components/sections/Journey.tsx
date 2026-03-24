@@ -44,7 +44,7 @@ export function Journey() {
           The Guest Journey
         </h2>
         <p className="text-text-secondary text-lg max-w-3xl mb-16">
-          From first contact to loyal regular — every interaction flows through
+          From first contact to loyal regular, every interaction flows through
           the platform.
         </p>
       </FadeIn>

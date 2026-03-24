@@ -16,11 +16,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sobremesa — The Complete Hospitality Guest Management Platform",
+  title: "Sobremesa - The Complete Hospitality Guest Management Platform",
   description:
-    "Reservations, Guest Intelligence, Campaigns & Reputation. Powered by WhatsApp & Instagram. Built for premium venues in the Dominican Republic.",
+    "Reservations, Guest Intelligence, Campaigns & Reputation. Powered by WhatsApp & Instagram. Made with love in the Dominican Republic.",
   openGraph: {
-    title: "Sobremesa — The Complete Hospitality Guest Management Platform",
+    title: "Sobremesa - The Complete Hospitality Guest Management Platform",
     description:
       "Reservations, Guest Intelligence, Campaigns & Reputation. Powered by WhatsApp & Instagram.",
     type: "website",

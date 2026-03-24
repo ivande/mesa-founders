@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 
 const benefits = [
   "Founding partner pricing locked in for the first 12 months",
-  "Direct input into product development — your feedback shapes what gets built",
+  "Direct input into product development, your feedback shapes what gets built",
   "White-glove onboarding: we set everything up, train your team, provide ongoing support",
   "Priority access to new features and modules",
   "Your venue featured as a showcase partner as we expand",
@@ -27,7 +27,7 @@ export function Partner() {
         </h2>
         <p className="text-text-secondary text-lg max-w-3xl mb-12">
           We are inviting 3–5 premium venues to join as founding partners. Not a
-          beta test — a partnership to build the best hospitality technology in the
+          beta test, but a partnership to build the best hospitality technology in the
           Dominican Republic together.
         </p>
       </FadeIn>

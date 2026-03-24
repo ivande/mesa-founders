@@ -8,7 +8,7 @@ export default function GlobalError() {
           <div style={{ textAlign: "center" }}>
             <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Error</h1>
             <p style={{ opacity: 0.6, marginBottom: "2rem" }}>Something went wrong</p>
-            <a href="/" style={{ color: "#b87333" }}>Back to Mesa</a>
+            <a href="/" style={{ color: "#b87333" }}>Back to Sobremesa</a>
           </div>
         </div>
       </body>

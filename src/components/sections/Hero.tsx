@@ -61,7 +61,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="text-text-on-dark/30 text-sm italic mt-6"
         >
-          Built for premium venues in the Dominican Republic
+          Made with love in the Dominican Republic
         </motion.p>
       </div>
 
