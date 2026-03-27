@@ -4,7 +4,7 @@ export const es: Dictionary = {
   gate: {
     comingSoon: "Pr\u00f3ximamente",
     title: "Sobremesa",
-    subtitle: "La plataforma completa de gesti\u00f3n de invitados para la hoteler\u00eda premium.",
+    subtitle: "La plataforma completa de gesti\u00f3n de invitados para la gastronom\u00eda premium.",
     launchingSoon: "Lanzamiento pr\u00f3ximo en Rep\u00fablica Dominicana.",
     enterPassword: "Ingrese la contrase\u00f1a para continuar",
     placeholder: "Contrase\u00f1a",
@@ -24,7 +24,7 @@ export const es: Dictionary = {
   hero: {
     badge: "Taller Final \u00b7 Marzo 2026",
     titleLine1: "La Plataforma Completa",
-    titleLine2: "de Gesti\u00f3n de Invitados para Hoteler\u00eda",
+    titleLine2: "de Gesti\u00f3n de Invitados para Gastronom\u00eda",
     reservations: "Reservas",
     guestIntelligence: "Inteligencia de Invitados",
     campaigns: "Campa\u00f1as",
@@ -33,7 +33,7 @@ export const es: Dictionary = {
     poweredByAnd: "&",
     poweredByInstagram: "Instagram",
     madeWith: "Hecho con amor en Rep\u00fablica Dominicana",
-    scroll: "Desplazar",
+    scroll: "Scroll",
   },
   problem: {
     title: "El Problema",
@@ -72,7 +72,7 @@ export const es: Dictionary = {
   vision: {
     title: "La Visi\u00f3n",
     subtitle:
-      "Una plataforma completa de gesti\u00f3n de invitados dise\u00f1ada desde cero para establecimientos de hoteler\u00eda premium en Am\u00e9rica Latina. La plataforma encuentra a los invitados donde ya est\u00e1n y brinda a los establecimientos un sistema poderoso y unificado para gestionar reservas, entender a sus invitados e impulsar visitas recurrentes.",
+      "Una plataforma completa de gesti\u00f3n de invitados dise\u00f1ada desde cero para restaurantes y bares premium en Am\u00e9rica Latina. La plataforma encuentra a los invitados donde ya est\u00e1n y brinda a los establecimientos un sistema poderoso y unificado para gestionar reservas, entender a sus invitados e impulsar visitas recurrentes.",
     pillars: [
       {
         title: "Nativo de WhatsApp",
@@ -206,7 +206,7 @@ export const es: Dictionary = {
   rollout: {
     title: "Plan de Lanzamiento",
     subtitle:
-      "Construido y lanzado en fases. Los socios tempranos tienen participaci\u00f3n directa en el producto y definen lo que se construye.",
+      "Construido y lanzado en fases. Los early partners tienen participaci\u00f3n directa en el producto y definen lo que se construye.",
     phases: [
       {
         phase: "Fase 1",
@@ -255,7 +255,7 @@ export const es: Dictionary = {
     ],
   },
   partner: {
-    title: "Programa de Socios Tempranos",
+    title: "Programa de Early Partners",
     subtitle:
       "Estamos invitando a 3\u20135 establecimientos premium a unirse como socios fundadores. No es una prueba beta, sino una asociaci\u00f3n para construir juntos la mejor tecnolog\u00eda de hospitalidad en Rep\u00fablica Dominicana.",
     whatYouGet: "Lo Que Recibes",
@@ -278,7 +278,7 @@ export const es: Dictionary = {
     title: "Ay\u00fadanos a Construir Esto Juntos",
     subtitle:
       "Tu experiencia y perspectiva como operadores es lo que har\u00e1 que esta plataforma sea excepcional. Responde algunas preguntas sobre tu establecimiento, tus invitados y lo que m\u00e1s te importa.",
-    button: "Comenzar el Taller",
+    button: "Llenar el Formulario",
     footnote: "Toma unos 10 minutos \u00b7 No hay respuestas incorrectas",
   },
   form: {

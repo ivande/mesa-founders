@@ -4,7 +4,7 @@ export const fr: Dictionary = {
   gate: {
     comingSoon: "Bient\u00f4t Disponible",
     title: "Sobremesa",
-    subtitle: "La plateforme compl\u00e8te de gestion des invit\u00e9s pour l\u2019h\u00f4tellerie premium.",
+    subtitle: "La plateforme compl\u00e8te de gestion des invit\u00e9s pour la restauration premium.",
     launchingSoon: "Lancement prochain en R\u00e9publique Dominicaine.",
     enterPassword: "Entrez le mot de passe pour continuer",
     placeholder: "Mot de passe",
@@ -24,7 +24,7 @@ export const fr: Dictionary = {
   hero: {
     badge: "Atelier Final \u00b7 Mars 2026",
     titleLine1: "La Plateforme Compl\u00e8te de Gestion",
-    titleLine2: "des Invit\u00e9s pour l\u2019H\u00f4tellerie",
+    titleLine2: "des Invit\u00e9s pour la Restauration",
     reservations: "R\u00e9servations",
     guestIntelligence: "Intelligence Invit\u00e9s",
     campaigns: "Campagnes",
@@ -72,7 +72,7 @@ export const fr: Dictionary = {
   vision: {
     title: "La Vision",
     subtitle:
-      "Une plateforme compl\u00e8te de gestion des invit\u00e9s con\u00e7ue de z\u00e9ro pour les \u00e9tablissements h\u00f4teliers premium en Am\u00e9rique latine. La plateforme rejoint les invit\u00e9s l\u00e0 o\u00f9 ils sont d\u00e9j\u00e0 et offre aux \u00e9tablissements un syst\u00e8me puissant et unifi\u00e9 pour g\u00e9rer les r\u00e9servations, comprendre leurs invit\u00e9s et stimuler les visites r\u00e9currentes.",
+      "Une plateforme compl\u00e8te de gestion des invit\u00e9s con\u00e7ue de z\u00e9ro pour les restaurants et bars premium en Am\u00e9rique latine. La plateforme rejoint les invit\u00e9s l\u00e0 o\u00f9 ils sont d\u00e9j\u00e0 et offre aux \u00e9tablissements un syst\u00e8me puissant et unifi\u00e9 pour g\u00e9rer les r\u00e9servations, comprendre leurs invit\u00e9s et stimuler les visites r\u00e9currentes.",
     pillars: [
       {
         title: "Natif WhatsApp",
@@ -257,7 +257,7 @@ export const fr: Dictionary = {
   partner: {
     title: "Programme Partenaires Pr\u00e9coces",
     subtitle:
-      "Nous invitons 3 \u00e0 5 \u00e9tablissements premium \u00e0 rejoindre en tant que partenaires fondateurs. Pas un test b\u00eata, mais un partenariat pour construire ensemble la meilleure technologie h\u00f4teli\u00e8re en R\u00e9publique Dominicaine.",
+      "Nous invitons 3 \u00e0 5 \u00e9tablissements premium \u00e0 rejoindre en tant que partenaires fondateurs. Pas un test b\u00eata, mais un partenariat pour construire ensemble la meilleure technologie de restauration en R\u00e9publique Dominicaine.",
     whatYouGet: "Ce Que Vous Recevez",
     whatWeNeed: "Ce Dont Nous Avons Besoin",
     benefits: [
