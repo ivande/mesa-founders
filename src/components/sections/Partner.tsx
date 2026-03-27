@@ -2,33 +2,19 @@
 
 import { ScrollSection } from "@/components/ui/ScrollSection";
 import { FadeIn } from "@/components/ui/FadeIn";
-
-const benefits = [
-  "Founding partner pricing locked in for the first 12 months",
-  "Direct input into product development, your feedback shapes what gets built",
-  "White-glove onboarding: we set everything up, train your team, provide ongoing support",
-  "Priority access to new features and modules",
-  "Your venue featured as a showcase partner as we expand",
-];
-
-const commitments = [
-  "Willingness to use the platform consistently during the pilot period",
-  "Honest, direct feedback on what works, what doesn't, and what's missing",
-  "A point of contact for weekly check-ins during the first two months",
-  "Permission to use anonymized data and results as case studies",
-];
+import { useT } from "@/i18n/context";
 
 export function Partner() {
+  const { t } = useT();
+
   return (
     <ScrollSection id="partner">
       <FadeIn>
         <h2 className="font-serif text-[clamp(2rem,3.5vw,3.5rem)] font-semibold mb-4">
-          Early Partner Program
+          {t.partner.title}
         </h2>
         <p className="text-text-secondary text-lg max-w-3xl mb-12">
-          We are inviting 3–5 premium venues to join as founding partners. Not a
-          beta test, but a partnership to build the best hospitality technology in the
-          Dominican Republic together.
+          {t.partner.subtitle}
         </p>
       </FadeIn>
 
@@ -36,11 +22,11 @@ export function Partner() {
         <FadeIn delay={0.1}>
           <div>
             <h3 className="font-serif text-xl font-semibold mb-6 text-accent">
-              What You Get
+              {t.partner.whatYouGet}
             </h3>
             <ul className="space-y-4">
-              {benefits.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm leading-relaxed">
+              {t.partner.benefits.map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm leading-relaxed">
                   <svg
                     className="w-5 h-5 text-accent shrink-0 mt-0.5"
                     viewBox="0 0 20 20"
@@ -62,11 +48,11 @@ export function Partner() {
         <FadeIn delay={0.2}>
           <div>
             <h3 className="font-serif text-xl font-semibold mb-6">
-              What We Need From You
+              {t.partner.whatWeNeed}
             </h3>
             <ul className="space-y-4">
-              {commitments.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm leading-relaxed">
+              {t.partner.commitments.map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm leading-relaxed">
                   <svg
                     className="w-5 h-5 text-text-secondary shrink-0 mt-0.5"
                     viewBox="0 0 20 20"

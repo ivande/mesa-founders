@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { useT } from "@/i18n/context";
 
 export function WorkshopCTA() {
+  const { t } = useT();
+
   return (
     <section
       id="workshop-cta"
@@ -21,23 +24,19 @@ export function WorkshopCTA() {
         <div className="w-16 h-px bg-accent mx-auto mb-8" />
 
         <h2 className="font-serif text-[clamp(2rem,3.5vw,3.5rem)] font-semibold mb-6">
-          Help Us Build This
-          <br />
-          Together
+          {t.workshopCta.title}
         </h2>
 
         <p className="text-text-on-dark/60 text-lg leading-relaxed mb-10">
-          Your experience and perspective as operators is what will make this
-          platform exceptional. Answer a few questions about your venue, your
-          guests, and what matters most to you.
+          {t.workshopCta.subtitle}
         </p>
 
         <Button href="/workshop" variant="primary" size="lg">
-          Begin the Workshop
+          {t.workshopCta.button}
         </Button>
 
         <p className="text-text-on-dark/30 text-sm mt-6">
-          Takes about 10 minutes &middot; No wrong answers
+          {t.workshopCta.footnote}
         </p>
       </motion.div>
     </section>

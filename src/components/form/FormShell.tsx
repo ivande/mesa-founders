@@ -1,15 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  WorkshopData,
-  stepSchemas,
-  stepTitles,
-  stepIntros,
-  workshopSchema,
-} from "@/types/workshop";
+import { z } from "zod";
+import { WorkshopData, workshopSchema } from "@/types/workshop";
 import { FormProgress } from "./FormProgress";
 import { ContactStep } from "./steps/ContactStep";
 import { OperationsStep } from "./steps/OperationsStep";
@@ -18,19 +13,11 @@ import { MarketingStep } from "./steps/MarketingStep";
 import { PlatformStep } from "./steps/PlatformStep";
 import { Button } from "@/components/ui/Button";
 import { submitWorkshop } from "@/lib/actions/submitWorkshop";
+import { useT } from "@/i18n/context";
 
 const STORAGE_KEY = "mesa-workshop-data";
 const STEP_KEY = "mesa-workshop-step";
 const TOTAL_STEPS = 5;
-
-// Fields that belong to each step, used for per-step validation
-const STEP_FIELDS: (keyof WorkshopData)[][] = [
-  ["venueName", "contactName", "role", "whatsapp"],
-  ["reservationFlow", "reservationVolume", "noShowRate", "currentTools", "primaryUser"],
-  ["regularPercentage", "preferenceTracking", "desiredInsights", "discoveryChannels"],
-  ["proactiveOutreach", "eventPromotion", "reviewManagement", "dreamMessage"],
-  ["mostExciting", "dealbreakers", "mustHave", "missingFeatures", "budgetComfort"],
-];
 
 export function FormShell() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -38,6 +25,43 @@ export function FormShell() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [stepErrors, setStepErrors] = useState<Record<string, string>>({});
+  const { t } = useT();
+
+  // Build locale-aware Zod schemas
+  const stepSchemas = useMemo(() => [
+    z.object({
+      venueName: z.string().min(1, t.validation.venueNameRequired),
+      contactName: z.string().min(1, t.validation.contactNameRequired),
+      role: z.string().min(1, t.validation.roleRequired),
+      whatsapp: z.string().min(1, t.validation.whatsappRequired),
+    }),
+    z.object({
+      reservationFlow: z.string().min(1, t.validation.reservationFlowRequired),
+      reservationVolume: z.string().optional(),
+      noShowRate: z.string().optional(),
+      currentTools: z.string().optional(),
+      primaryUser: z.string().optional(),
+    }),
+    z.object({
+      regularPercentage: z.string().optional(),
+      preferenceTracking: z.string().optional(),
+      desiredInsights: z.string().optional(),
+      discoveryChannels: z.string().optional(),
+    }),
+    z.object({
+      proactiveOutreach: z.string().optional(),
+      eventPromotion: z.string().optional(),
+      reviewManagement: z.string().optional(),
+      dreamMessage: z.string().optional(),
+    }),
+    z.object({
+      mostExciting: z.string().optional(),
+      dealbreakers: z.string().optional(),
+      mustHave: z.string().optional(),
+      missingFeatures: z.string().optional(),
+      budgetComfort: z.string().optional(),
+    }),
+  ], [t.validation]);
 
   const {
     register,
@@ -139,15 +163,12 @@ export function FormShell() {
   };
 
   const doSubmit = async () => {
-    // Validate current (last) step first
     if (!validateCurrentStep()) return;
 
     const values = getValues();
-
-    // Validate the full schema before submitting
     const result = workshopSchema.safeParse(values);
     if (!result.success) {
-      setSubmitError("Please go back and fill in all required fields.");
+      setSubmitError(t.form.fillRequired);
       return;
     }
 
@@ -161,10 +182,10 @@ export function FormShell() {
         localStorage.removeItem(STEP_KEY);
         window.location.href = "/workshop/gracias";
       } else {
-        setSubmitError(response.error || "Something went wrong. Please try again.");
+        setSubmitError(response.error || t.form.submitError);
       }
     } catch {
-      setSubmitError("Something went wrong. Please try again.");
+      setSubmitError(t.form.submitError);
     } finally {
       setIsSubmitting(false);
     }
@@ -173,9 +194,7 @@ export function FormShell() {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       const target = e.target as HTMLElement;
-      // Allow Enter in textareas for newlines
       if (target.tagName === "TEXTAREA") return;
-
       e.preventDefault();
       if (isLastStep) {
         doSubmit();
@@ -185,7 +204,6 @@ export function FormShell() {
     }
   };
 
-  // Merge react-hook-form errors with our step validation errors
   const mergedErrors = { ...errors };
   for (const [field, message] of Object.entries(stepErrors)) {
     if (!mergedErrors[field as keyof WorkshopData]) {
@@ -221,10 +239,10 @@ export function FormShell() {
             transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p className="text-accent text-sm tracking-widest uppercase mb-2">
-              {stepTitles[currentStep]}
+              {t.form.stepTitles[currentStep]}
             </p>
             <p className="text-text-secondary text-lg mb-10">
-              {stepIntros[currentStep]}
+              {t.form.stepIntros[currentStep]}
             </p>
 
             {stepComponents[currentStep]}
@@ -238,21 +256,21 @@ export function FormShell() {
         <div className="flex items-center justify-between mt-8 pt-8 border-t border-border">
           {currentStep > 0 ? (
             <Button variant="ghost" onClick={goBack}>
-              Back
+              {t.form.back}
             </Button>
           ) : (
             <Button variant="ghost" href="/">
-              &larr; Back to presentation
+              {t.form.backToPresentation}
             </Button>
           )}
 
           {isLastStep ? (
             <Button onClick={doSubmit} disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Submit Responses"}
+              {isSubmitting ? t.form.submitting : t.form.submitResponses}
             </Button>
           ) : (
             <Button onClick={goNext}>
-              Continue
+              {t.form.continue}
             </Button>
           )}
         </div>

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useT } from "@/i18n/context";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 
 const GATE_KEY = "mesa-access";
 const PASSWORD = "sobremesa";
@@ -11,6 +13,7 @@ export function Gate({ children }: { children: React.ReactNode }) {
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
   const [checking, setChecking] = useState(true);
+  const { t } = useT();
 
   useEffect(() => {
     const stored = localStorage.getItem(GATE_KEY);
@@ -32,7 +35,15 @@ export function Gate({ children }: { children: React.ReactNode }) {
   };
 
   if (checking) return null;
-  if (authorized) return <>{children}</>;
+
+  if (authorized) {
+    return (
+      <>
+        <LanguageSwitcher />
+        {children}
+      </>
+    );
+  }
 
   return (
     <div className="min-h-svh bg-bg-dark text-text-on-dark flex flex-col items-center justify-center px-[clamp(1.5rem,5vw,6rem)]">
@@ -45,17 +56,17 @@ export function Gate({ children }: { children: React.ReactNode }) {
         className="relative z-10 text-center max-w-lg"
       >
         <p className="text-accent tracking-[0.25em] uppercase text-xs font-medium mb-8">
-          Coming Soon
+          {t.gate.comingSoon}
         </p>
 
         <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-semibold mb-4">
-          Sobremesa
+          {t.gate.title}
         </h1>
 
         <p className="text-text-on-dark/50 text-lg leading-relaxed mb-12">
-          The complete guest management platform for premium hospitality.
+          {t.gate.subtitle}
           <br className="hidden sm:block" />
-          {" "}Launching soon in the Dominican Republic.
+          {" "}{t.gate.launchingSoon}
         </p>
 
         <form onSubmit={handleSubmit} className="max-w-xs mx-auto">
@@ -63,7 +74,7 @@ export function Gate({ children }: { children: React.ReactNode }) {
             htmlFor="password"
             className="block text-text-on-dark/40 text-sm mb-3"
           >
-            Enter password to continue
+            {t.gate.enterPassword}
           </label>
           <div className="flex gap-3">
             <input
@@ -71,7 +82,7 @@ export function Gate({ children }: { children: React.ReactNode }) {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Password"
+              placeholder={t.gate.placeholder}
               autoComplete="off"
               className={`flex-1 bg-transparent border rounded-md px-4 py-3 text-text-on-dark placeholder:text-text-on-dark/20 focus:outline-none transition-colors text-center tracking-wider ${
                 error ? "border-red-400" : "border-border-dark focus:border-accent"
@@ -84,14 +95,14 @@ export function Gate({ children }: { children: React.ReactNode }) {
               animate={{ opacity: 1 }}
               className="text-red-400/80 text-xs mt-3"
             >
-              Not quite. Try again.
+              {t.gate.error}
             </motion.p>
           )}
         </form>
 
         <div className="w-12 h-px bg-border-dark mx-auto mt-16 mb-6" />
         <p className="text-text-on-dark/20 text-xs">
-          Reservations &middot; Guest Intelligence &middot; Campaigns &middot; Reputation
+          {t.gate.tagline}
         </p>
       </motion.div>
     </div>

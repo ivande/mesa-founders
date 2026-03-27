@@ -3,6 +3,7 @@
 import { UseFormRegister, FieldErrors } from "react-hook-form";
 import { WorkshopData } from "@/types/workshop";
 import { TextArea } from "@/components/form/fields/TextArea";
+import { useT } from "@/i18n/context";
 
 interface StepProps {
   register: UseFormRegister<WorkshopData>;
@@ -10,43 +11,16 @@ interface StepProps {
 }
 
 export function PlatformStep({ register, errors }: StepProps) {
+  const { t } = useT();
+  const f = t.form.platformStep;
+
   return (
     <div className="space-y-2">
-      <TextArea
-        name="mostExciting"
-        label="Which of the six modules excites you most? Which feels least important?"
-        placeholder="Reservation Engine, Guest Intelligence, Campaigns, Reputation, Analytics, Events..."
-        register={register}
-        errors={errors}
-      />
-      <TextArea
-        name="dealbreakers"
-        label="What would make you stop using a tool like this after the first month?"
-        placeholder="The things that would make you walk away..."
-        register={register}
-        errors={errors}
-      />
-      <TextArea
-        name="mustHave"
-        label="What would make this a 'must-have' rather than a 'nice-to-have' for your venue?"
-        placeholder="The line between interesting and indispensable..."
-        register={register}
-        errors={errors}
-      />
-      <TextArea
-        name="missingFeatures"
-        label="Is there anything we didn't mention that you wish a system like this could do?"
-        placeholder="Features or capabilities we might have missed..."
-        register={register}
-        errors={errors}
-      />
-      <TextArea
-        name="budgetComfort"
-        label="What would you be comfortable paying monthly for a platform that demonstrably reduces no-shows and increases repeat visits?"
-        placeholder="A range or number you'd consider fair..."
-        register={register}
-        errors={errors}
-      />
+      <TextArea name="mostExciting" label={f.mostExciting.label} placeholder={f.mostExciting.placeholder} register={register} errors={errors} />
+      <TextArea name="dealbreakers" label={f.dealbreakers.label} placeholder={f.dealbreakers.placeholder} register={register} errors={errors} />
+      <TextArea name="mustHave" label={f.mustHave.label} placeholder={f.mustHave.placeholder} register={register} errors={errors} />
+      <TextArea name="missingFeatures" label={f.missingFeatures.label} placeholder={f.missingFeatures.placeholder} register={register} errors={errors} />
+      <TextArea name="budgetComfort" label={f.budgetComfort.label} placeholder={f.budgetComfort.placeholder} register={register} errors={errors} />
     </div>
   );
 }

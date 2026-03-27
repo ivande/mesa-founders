@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { stepTitles } from "@/types/workshop";
+import { useT } from "@/i18n/context";
 
 interface FormProgressProps {
   currentStep: number;
@@ -9,6 +9,7 @@ interface FormProgressProps {
 }
 
 export function FormProgress({ currentStep, totalSteps }: FormProgressProps) {
+  const { t } = useT();
   const progress = ((currentStep + 1) / totalSteps) * 100;
 
   return (
@@ -23,9 +24,9 @@ export function FormProgress({ currentStep, totalSteps }: FormProgressProps) {
       </div>
       <div className="flex justify-center py-4 bg-bg-primary/80 backdrop-blur-sm">
         <div className="flex items-center gap-6 text-sm">
-          {stepTitles.map((title, i) => (
+          {t.form.stepTitles.map((title, i) => (
             <span
-              key={title}
+              key={i}
               className={`hidden sm:inline transition-colors ${
                 i === currentStep
                   ? "text-accent font-medium"
@@ -38,7 +39,7 @@ export function FormProgress({ currentStep, totalSteps }: FormProgressProps) {
             </span>
           ))}
           <span className="sm:hidden text-text-secondary text-xs">
-            {currentStep + 1} of {totalSteps}
+            {t.form.stepOf(currentStep + 1, totalSteps)}
           </span>
         </div>
       </div>

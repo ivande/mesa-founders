@@ -3,6 +3,7 @@
 import { UseFormRegister, FieldErrors } from "react-hook-form";
 import { WorkshopData } from "@/types/workshop";
 import { TextInput } from "@/components/form/fields/TextInput";
+import { useT } from "@/i18n/context";
 
 interface StepProps {
   register: UseFormRegister<WorkshopData>;
@@ -10,36 +11,38 @@ interface StepProps {
 }
 
 export function ContactStep({ register, errors }: StepProps) {
+  const { t } = useT();
+
   return (
     <div className="grid md:grid-cols-2 gap-x-8">
       <TextInput
         name="venueName"
-        label="Venue Name"
-        placeholder="e.g., La Terraza del Mar"
+        label={t.form.contact.venueName.label}
+        placeholder={t.form.contact.venueName.placeholder}
         register={register}
         errors={errors}
         required
       />
       <TextInput
         name="contactName"
-        label="Your Name"
-        placeholder="e.g., María García"
+        label={t.form.contact.contactName.label}
+        placeholder={t.form.contact.contactName.placeholder}
         register={register}
         errors={errors}
         required
       />
       <TextInput
         name="role"
-        label="Your Role"
-        placeholder="e.g., Owner, General Manager, Host"
+        label={t.form.contact.role.label}
+        placeholder={t.form.contact.role.placeholder}
         register={register}
         errors={errors}
         required
       />
       <TextInput
         name="whatsapp"
-        label="WhatsApp Number"
-        placeholder="e.g., +1 809 555 1234"
+        label={t.form.contact.whatsapp.label}
+        placeholder={t.form.contact.whatsapp.placeholder}
         register={register}
         errors={errors}
         required

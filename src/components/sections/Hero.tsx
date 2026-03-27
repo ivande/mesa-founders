@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useT } from "@/i18n/context";
 
 export function Hero() {
+  const { t } = useT();
+
   return (
     <section
       id="hero"
@@ -17,7 +20,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-accent tracking-[0.25em] uppercase text-sm font-medium mb-8"
         >
-          Final Workshop &middot; March 2026
+          {t.hero.badge}
         </motion.p>
 
         <motion.h1
@@ -26,9 +29,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           className="font-serif text-[clamp(2rem,5vw,5rem)] leading-[1.1] font-semibold mb-6"
         >
-          The Complete Hospitality
+          {t.hero.titleLine1}
           <br className="hidden md:block" />
-          {" "}Guest Management Platform
+          {" "}{t.hero.titleLine2}
         </motion.h1>
 
         <motion.div
@@ -37,13 +40,13 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex items-center justify-center gap-2 md:gap-3 flex-wrap text-text-on-dark/60 text-[clamp(0.875rem,1.5vw,1.25rem)] mb-4"
         >
-          <span>Reservations</span>
-          <span className="text-accent">·</span>
-          <span>Guest Intelligence</span>
-          <span className="text-accent">·</span>
-          <span>Campaigns</span>
-          <span className="text-accent">·</span>
-          <span>Reputation</span>
+          <span>{t.hero.reservations}</span>
+          <span className="text-accent">&middot;</span>
+          <span>{t.hero.guestIntelligence}</span>
+          <span className="text-accent">&middot;</span>
+          <span>{t.hero.campaigns}</span>
+          <span className="text-accent">&middot;</span>
+          <span>{t.hero.reputation}</span>
         </motion.div>
 
         <motion.p
@@ -52,7 +55,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.0 }}
           className="text-text-on-dark/40 text-base mb-2"
         >
-          Powered by WhatsApp <span className="text-accent">&</span> Instagram
+          {t.hero.poweredBy} <span className="text-accent">{t.hero.poweredByAnd}</span> {t.hero.poweredByInstagram}
         </motion.p>
 
         <motion.p
@@ -61,7 +64,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="text-text-on-dark/30 text-sm italic mt-6"
         >
-          Made with love in the Dominican Republic
+          {t.hero.madeWith}
         </motion.p>
       </div>
 
@@ -76,7 +79,7 @@ export function Hero() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2 text-text-on-dark/30"
         >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-xs tracking-widest uppercase">{t.hero.scroll}</span>
           <svg
             width="16"
             height="24"
